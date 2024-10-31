@@ -1,0 +1,20 @@
+{
+  "name": "vitepress_bedrocknotebook",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "katex": "^0.16.11",
+    "markdown-it-texmath": "^1.0.0",
+    "vitepress": "^1.4.2"
+  }
+}
