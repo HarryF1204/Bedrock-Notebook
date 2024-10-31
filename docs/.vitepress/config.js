@@ -44,6 +44,7 @@ function generateSidebarItems(dir) {
 export default defineConfig({
     title: 'The Bedrock Notebook',
     description: 'A VitePress-powered documentation site',
+    base: '/Bedrock-Notebook/',
     themeConfig: {
         sidebar: [
             {
