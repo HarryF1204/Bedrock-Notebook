@@ -43,6 +43,9 @@ jobs:
       - name: Build with VitePress
         run: npm run build
 
+      - name: Add .nojekyll file
+        run: echo "" > docs/.vitepress/dist/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
