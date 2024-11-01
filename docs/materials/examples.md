@@ -84,3 +84,32 @@ This materials makes use of the emissive property without clearing the alpha cha
     }
 }
 ```
+
+
+## Entity Outlines
+### Method 1
+![Outline Method 2](/images/materials/outline_1.png)
+
+Duplicate your model in blockbench and scale it slightly either using the `inflate` property, or by using an animation. Apply this material to the outline.
+
+```json
+"outline:entity_alphatest": {
+	"+states": [
+		"InvertCulling"
+	],
+	"-states": [
+		"DisableCulling"
+	],
+	"-defines": [
+		"FANCY"
+	]
+}
+```
+
+
+### Method 2
+For this method to work, setup your model as shown below with outline bones inflated by ``-17`` and make sure they are textured the outline colour that you want.
+
+![Outline Method 2](/images/materials/outline_2.png)
+
+Then, you will need to apply the ``entity_emissive_alpha_one_sided`` to the entity to make sure that the outline renders correctly. 
