@@ -57,7 +57,9 @@ In this example material: *The base material, sets a stencil value. The outline 
 ```
 
 
-Each "pass" requires it's own render controller. As touched on in [Multi-Material Models](/materials/techniques/MultiMaterial%20models.md), when using wild cards to match bones for material configeration, it can bleed into unintended bones, so the material uses a bone namespace to avoid this.
+Each "pass" requires it's own render controller and in this example, they both make use of `part_visibility` which is used for two reasons:
+- As touched on in [Multi-Material Models](/materials/techniques/MultiMaterial%20models.md), when using wild cards to match bones for material configeration, it can bleed into unintended bones (this is not required, It could use `base*` to apply the material but this way, we get a real-world example).
+- The second reason is that the same model is used for both passes, so without hiding the `outline`, it would be the only thing visible.
 
 In the outline controller, the `ignore_lighting` field is set to `true` to ensure the outline is always rendered at full brightness. The `overlay_color` field is set to white to allow us to use only one texture or to let us apply some sort of colour wheel effect to the outline.
 
@@ -70,22 +72,38 @@ In the outline controller, the `ignore_lighting` field is set to `true` to ensur
             "geometry": "geometry.default",
             "materials": [
                 {
-                    "base*": "material.base"
+                    "*": "material.base"
                 }
             ],
             "textures": [
                 "texture.default"
+            ],
+            "part_visibility": [
+                {
+                    "*": false
+                },
+                {
+                    "base*": true
+                }
             ]
         },
         "controller.render.outline.outline": {
             "geometry": "geometry.default",
             "materials": [
                 {
-                    "outline*": "material.outline"
+                    "*": "material.outline"
                 }
             ],
             "textures": [
                 "texture.default"
+            ],
+            "part_visibility": [
+                {
+                    "*": false
+                },
+                {
+                    "outline*": true
+                }
             ],
             "ignore_lighting": true,
             "overlay_color": {
