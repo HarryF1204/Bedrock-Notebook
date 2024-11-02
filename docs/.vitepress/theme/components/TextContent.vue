@@ -11,7 +11,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { computed } from 'vue'
-const basePath = import.meta.env.BASE_URL + 'public/';
+const basePath = import.meta.env.BASE_URL + 'public';
 
 const props = defineProps({
     path: {
