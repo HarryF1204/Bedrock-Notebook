@@ -68,6 +68,15 @@ export default defineConfig({
     },
     markdown: {
         config: (md) => {
+            md.renderer.rules.text = (tokens, idx) => {
+                let content = tokens[idx].content;
+                if (content.includes('- [ ]') || content.includes('- [x]')) {
+                    content = content
+                        .replace(/- \[ \]/g, '<input type="checkbox" disabled>')
+                        .replace(/- \[x\]/g, '<input type="checkbox" checked disabled>');
+                }
+                return content;
+            };
             md.use(texmath, {
                 engine: katex,
                 delimiters: 'dollars', // Use '$' for inline and '$$' for block math
