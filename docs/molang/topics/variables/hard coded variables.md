@@ -11,6 +11,10 @@ context.owning_entity
 context.player_offhand_arm_height
 ```
 
+### Is First Person
+`c.is_first_person` can be used from item attachables and returns true when the player is in first person. Since hard-coded actor variables ― like `v.is_first_person` ― are read-only and private, so you can think of this context varaible as a `getter`.
+
+
 ### Item Slot
 The value of `c.item_slot` (commonly used in geometries to bind a model to an entity bone) depends on where the attachable is slotted:
 
@@ -23,8 +27,21 @@ The value of `c.item_slot` (commonly used in geometries to bind a model to an en
 
 Because the last 2 return empty strings, there's no way using the context variable alone to tell when in those 2 slots/which one it is. This makes `q.item_slot_to_bone_name` a poor choice for bone-binding when it comes to armour but great for tools.
 
-### Is First Person
-`c.is_first_person` can be used from item attachables and returns true when the player is in first person. Since hard-coded actor variables ― like `v.is_first_person` ― are read-only and private, so you can think of this context varaible as a `getter`.
+## Other
+`c.other` can be used from server-side item files to refer to the "other" item in a repearable recipe.
+In this example, `c.other` refers to the item being used to repair the bow:
+```json
+"minecraft:repairable": {
+    "repair_items": [
+        {
+        "items": [
+            "bow:bow"
+        ],
+        "repair_amount": "c.other->q.remaining_durability * 0.8"
+        }
+    ]
+}
+```
 
 ### Owning Entity
 `c.owning_entity` returns a reference to the entity holding an item attachable. It can be accessed using the `->` operator, for example:
