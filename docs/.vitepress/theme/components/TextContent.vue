@@ -11,8 +11,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { computed } from 'vue'
-const basePath = import.meta.env.BASE_URL;
-
 const props = defineProps({
     path: {
         type: String,
@@ -25,7 +23,7 @@ const lines = computed(() => content.value.split('\n'))
 
 const fetchContent = async () => {
     try {
-        const response = await fetch(basePath + props.path)
+        const response = await fetch(props.path)
         const buffer = await response.arrayBuffer()
         const decoder = new TextDecoder('utf-16')
         content.value = decoder.decode(buffer)

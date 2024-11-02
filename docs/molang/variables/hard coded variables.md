@@ -31,4 +31,4 @@ Because the last 2 return empty strings, there's no way using the context variab
 
 ## Variables
 Hardcoded variables may be used by entities, particles, and items. They are read-only, private, and sometimes only created for entities with specific runtime identifiers.
-<TextContent path="/txt/molang/hardcoded.txt"/>
+<TextContent path="/Bedrock-Notebook/txt/molang/hardcoded.txt"/>
