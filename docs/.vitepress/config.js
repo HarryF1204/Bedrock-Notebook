@@ -48,7 +48,7 @@ export default defineConfig({
     themeConfig: {
         sidebar: [
             {
-                text: 'Introduction',
+                text: 'Topics',
                 items: [{ text: 'Home', link: '/index' }, ...generateSidebarItems(docsPath)],
             }
         ],
