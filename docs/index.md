@@ -24,4 +24,3 @@ Community-created documentation for the ScriptAPI.
 - **[MS Learn - Minecraft Creator Documentation](https://learn.microsoft.com/en-gb/minecraft/creator/)**  
   Microsoft's official documentation for Minecraft creators, including setup, API references, and tutorials. 
 
-

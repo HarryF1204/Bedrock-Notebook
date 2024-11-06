@@ -29,7 +29,8 @@ Places you can use translations:
 
 ## Data-Driven Item Name Localization 
 
-> [!warning] Display name text translations do not support ":". Use "." to seperate each section of the identifier.
+> [!warning] Warning
+> **Display name text translations do not support ":". Use "." to seperate each section of the identifier.**
 
 The `minecraft:display_name` can compose keys using `%`. For Example, if you wanted to add a few lines of lore using the item name, you could do something like this:
 

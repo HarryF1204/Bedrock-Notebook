@@ -3,7 +3,8 @@
 
 # Example Materials
 
-> [!note] This page is a WIP.
+> [!note] Note 
+> **This page is a WIP**
 
 ## Additive
 This material is not a perfect match although it is quite close. You may have to change the `light_color_multiplier` and add `ignore lighting` in the render controller depending on the conditions of your entity.

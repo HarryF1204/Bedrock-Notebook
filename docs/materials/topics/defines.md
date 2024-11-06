@@ -16,7 +16,8 @@ Defines are inherited from their base class and can be added/removed using the `
 
 Enables the "overlay_color" render controller property, allowing the texture to be overlayed with a colour based on the set RGBA values. 
 
-> [!note] Note that the values can be a `molang expression`, `int`, or `float`
+> [!note] Note
+> Note that the values can be a `molang expression`, `int`, or `float`
 
 ```json
 // render_controllers/entity_name.json
@@ -69,7 +70,8 @@ To create a simple looping animation, you can use this logic:
 ```
 
 ## Color Mask
-> [!warning] This define requires the entity to have either the "player" or "warden" runtime identifier.
+> [!warning] Warning
+> **This define requires the entity to have either the "player" or "warden" runtime identifier.**
 
 ```json
 "+defines": ["USE_COLOR_MASK"]
@@ -108,7 +110,8 @@ Allows for multiple textures to be set in the textures array within the render c
 States that the shader should apply anti-aliasing at the texel (texture element) level. It applies blending to the colours of neighbouring texels, improving the overall quality of textures, especially when viewed at angles or up close. The `TEXEL_AA` define, along with the associated `TexelAA` texture filter, helps achieve smoother transitions between texels. 
 
 ## Enable Fog
-> [!warning] This define no longer works
+> [!warning] Warning
+> **This feature no longer works**
 
 ```json
 "+defines": ["ENABLE_FOG"]

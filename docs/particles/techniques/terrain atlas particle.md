@@ -6,13 +6,13 @@
 
 The warden has a particle `warden_dig.particle.json` that uses the atlas to display particles. For this, Minecraft added Molang queries that we can use to translate block -> texture UV values.
 
-To setup a particle that uses the block atlas, the first thing we need to do is setup an entity with a client-side animation that we can use to pass pre-effect calculated variables to the particle. To do this, add this particle effect to the entity's animation.
+To setup a particle that uses the block atlas, the first thing we need to do is setup an entity with a client-side animation that we can use to setup variables by executing molang in the variable scope of the particle. To do this, add this particle effect to the entity's animation. 
 
 ```json
 // particle pre-effect script
 {
     "effect": "particle_reference",
-    "pre_effect_script": "variable.dig_particle_texture_coordinate = query.surface_particle_texture_coordinate; variable.dig_particle_texture_size = query.surface_particle_texture_size;
+    "pre_effect_script": "variable.dig_particle_texture_coordinate = query.surface_particle_texture_coordinate; variable.dig_particle_texture_size = query.surface_particle_texture_size;"
 }
 ```
 

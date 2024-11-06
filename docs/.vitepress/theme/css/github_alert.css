@@ -1,0 +1,159 @@
+/* Base style for all custom blocks */
+.custom-block {
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    color: #e0e0e0;
+    /* Default text color */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base title styling for all custom block titles */
+.custom-block .custom-block-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Icon styling for all custom blocks (added before title text) */
+.custom-block .custom-block-title::before {
+    content: '';
+    display: inline-block;
+    width: 1.2em;
+    /* Increased size */
+    height: 1.2em;
+    /* Increased size */
+    margin-right: 0.5rem;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    vertical-align: middle;
+}
+
+/* NOTE block styles */
+.custom-block.note {
+    border-left: 4px solid #6c47ff;
+    /* Purple border for notes */
+    background-color: #1e1e2e;
+    /* Dark background */
+}
+
+.custom-block.note .custom-block-title {
+    color: #b3a1ff;
+    /* Purple title color */
+}
+
+.custom-block.note .custom-block-title::before {
+    mask-image: url('/icons/note.svg');
+    -webkit-mask-image: url('/icons/note.svg');
+    background-color: #b3a1ff;
+}
+
+/* WARNING block styles */
+.custom-block.warning {
+    border-left: 4px solid #ffa500;
+    /* Orange border for warnings */
+    background-color: #3a2a1e;
+    /* Darker orange/brown background */
+}
+
+.custom-block.warning .custom-block-title {
+    color: #ffc766;
+    /* Lighter orange title color */
+}
+
+.custom-block.warning .custom-block-title::before {
+    mask-image: url('/icons/warning.svg');
+    -webkit-mask-image: url('/icons/warning.svg');
+    background-color: #ffc766;
+}
+
+/* INFO block styles */
+.custom-block.info {
+    border-left: 4px solid #4a90e2;
+    /* Blue border for info */
+    background-color: #1e2a3a;
+    /* Dark blue background */
+}
+
+.custom-block.info .custom-block-title {
+    color: #7ab3e9;
+    /* Light blue title color */
+}
+
+.custom-block.info .custom-block-title::before {
+    mask-image: url('/icons/info.svg');
+    -webkit-mask-image: url('/icons/info.svg');
+    background-color: #7ab3e9;
+}
+
+/* TIP block styles */
+.custom-block.tip {
+    border-left: 4px solid #4caf50;
+    /* Green border for tips */
+    background-color: #1e3a2a;
+    /* Dark green background */
+}
+
+.custom-block.tip .custom-block-title {
+    color: #8be78d;
+    /* Light green title color */
+}
+
+.custom-block.tip .custom-block-title::before {
+    mask-image: url('/icons/tip.svg');
+    -webkit-mask-image: url('/icons/tip.svg');
+    background-color: #8be78d;
+}
+
+/* DANGER block styles */
+.custom-block.danger {
+    border-left: 4px solid #d32f2f;
+    /* Bright red border for danger */
+    background-color: #3a1e1e;
+    /* Dark red background */
+}
+
+.custom-block.danger .custom-block-title {
+    color: #f28b8b;
+    /* Lighter red title color */
+}
+
+.custom-block.danger .custom-block-title::before {
+    mask-image: url('/icons/danger.svg');
+    -webkit-mask-image: url('/icons/danger.svg');
+    background-color: #f28b8b;
+}
+
+/* CAUTION block styles */
+.custom-block.caution {
+    border-left: 4px solid #ffb300;
+    /* Amber border for caution */
+    background-color: #3a2e1e;
+    /* Dark amber background */
+    color: #e0e0e0;
+    /* Body text color */
+}
+
+/* Title styling for caution block with matching icon color */
+.custom-block.caution .custom-block-title {
+    color: #ffd54f;
+    /* Light amber title color */
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-block.caution .custom-block-title::before {
+    mask-image: url('/icons/caution.svg');
+    -webkit-mask-image: url('/icons/caution.svg');
+    background-color: #ffd54f;
+}

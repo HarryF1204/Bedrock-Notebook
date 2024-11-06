@@ -1,7 +1,8 @@
 
 # Entity Alias
 
-> [!warning] This Feature is Deprecated
+> [!warning] Warning
+> **This feature is deprecated**
 
 Entity aliases are a useful, not-so-well-known feature of server entity definitions. They allow for tersely describing variants of an entity that would be configured using only properties. Aliases go in the description object and look like:
 
