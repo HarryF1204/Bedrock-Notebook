@@ -61,3 +61,104 @@ Final Color = (Source Color × Source Factor) + (Destination Color × Destinatio
 | **Multiplicative** | `DestColor`   | `Zero`             | This method multiplies the source colour with the destination, resulting in darker visuals where the source or destination is dark.                                                                        |
 
 
+## Blending Examples
+Using particles, 8 blending states have been created to showcase.
+
+### Alpha Blending
+This is the default blend mode. It blends pixels based on translucency.
+
+```json
+"particles_blend_normal:particles_blend": {
+    "blendSrc": "SourceAlpha",
+    "blendDst": "OneMinusSrcAlpha"
+}
+```
+
+![test](/images/materials/blending_modes/alpha.png)
+
+### Exclusion
+Inverts colours based on lightness.
+
+```json
+"particles_blend_exclusion:particles_blend": {
+    "blendSrc": "OneMinusDestColor",
+    "blendDst": "OneMinusSrcColor"
+}
+```
+
+![Exclusion](/images/materials/blending_modes/exclusion.png)
+
+![Exclusion Full](/images/materials/blending_modes/exclusion_full.png)
+
+### Multiply
+Additive blending merges colors by adding their RGBA values, causing them to approach white. This mode gives a bright, luminous effect.
+
+```json
+"particles_blend_multiply:particles_blend": {
+    "blendSrc": "DestColor",
+    "blendDst": "Zero"
+}
+```
+
+![Multiple](/images/materials/blending_modes/multiply.png)
+
+### Double Multiply
+Brightens or highlights backgrounds when used with brighter colours; darkens most colours.
+
+```json
+"particles_blend_double_multiply:particles_blend": {
+    "blendSrc": "DestColor",
+    "blendDst": "SourceColor"
+}
+```
+
+![Double Multiply](/images/materials/blending_modes/double_multiply.png)
+
+### Additive
+Merges towards white.
+
+```json
+"particles_blend_additive:particles_blend": {
+    "blendSrc": "One",
+    "blendDst": "One"
+}
+```
+
+![Additive](/images/materials/blending_modes/additive.png)
+
+### Additive Blend
+Merges towards white based on alpha value.
+
+```json
+"particles_blend_additive_blend:particles_blend": {
+    "blendSrc": "SourceAlpha",
+    "blendDst": "One"
+}
+```
+
+![Additive Blend](/images/materials/blending_modes/additive_blend.png)
+
+### Pre-multiplied Alpha
+Inversely blends to additive based on alpha value.
+
+```json
+"particles_blend_premultiplied_alpha:particles_blend": {
+    "blendSrc": "One",
+    "blendDst": "OneMinusSrcAlpha"
+}
+```
+
+![Pre-multiplied Alpha](/images/materials/blending_modes/pre_multiplied_alpha.png)
+
+### Opaque
+Makes all pixels opaque.
+
+```json
+"particles_blend_opaque:particles_blend": {
+    "blendSrc": "One",
+    "blendDst": "Zero"
+}
+```
+
+![Opaque](/images/materials/blending_modes/opaque_with_glass.png)
+
