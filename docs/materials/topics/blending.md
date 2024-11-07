@@ -151,7 +151,7 @@ Inversely blends to additive based on alpha value.
 ![Pre-multiplied Alpha](/images/materials/blending_modes/pre_multiplied_alpha.png)
 
 ### Opaque
-Makes all pixels opaque.
+Makes all pixels opaque, making it ignore other blending models even when they are infront.
 
 ```json
 "particles_blend_opaque:particles_blend": {
