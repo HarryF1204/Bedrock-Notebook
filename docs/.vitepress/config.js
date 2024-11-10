@@ -45,6 +45,7 @@ export default defineConfig({
     title: 'The Bedrock Notebook',
     description: 'A VitePress-powered documentation site',
     base: '/Bedrock-Notebook/',
+    ignoreDeadLinks: true,
     head: [
         ['link', { rel: 'icon', type: 'image/png', href: '/Bedrock-Notebook/icons/app_icon.png' }]
     ],
