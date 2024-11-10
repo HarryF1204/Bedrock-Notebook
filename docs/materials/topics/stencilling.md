@@ -7,7 +7,7 @@
 ## Overview
 Stencilling allows you to control the drawing of pixels based on custom rules which allows for effects like masking, outlining, and multi-pass rendering. You can control both reading and writing to the stencil buffer to create these effects.
 
-When using stencils on a single entity, you'll need to use [Multi-Pass Rendering](/materials/techniques/multipass%20rendering.md). This allows you to write to the buffer in one controller then read from it in another.
+When using stencils on a single entity, you'll need to use [Multi-Pass Rendering](/materials/techniques/multi-pass%20rendering.md). This allows you to write to the buffer in one controller then read from it in another.
 
 To apply stencil operations, you must first enable the required state `StencilWrite` and/or `EnableStencilTest`.
 
