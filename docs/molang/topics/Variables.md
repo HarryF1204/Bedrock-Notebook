@@ -1,3 +1,12 @@
+---
+next:
+    text: 'Domain'
+    link: '/molang/topics/domain'
+prev: 
+    text: 'Math'
+    link: '/molang/topics/math'
+---
+
 # Variables
 
 ## Variable Types
@@ -85,5 +94,48 @@ In this example, `c.other` refers to the item being used to repair the bow:
 ```
 
 ### Variables
-Hardcoded variables may be used by entities, particles, and items. They are read-only, private, and sometimes only created for entities with specific runtime identifiers.
+Hardcoded variables may be used by entities, particles, and items. They are read-only, private, and sometimes only created for entities with specific runtime identifiers. To make a private variable accessible, you can use the `public` keyword in the script component of the client-entity file.
+```json
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      ...
+      "scripts": {
+        "variables": {
+          "variable.is_first_person": "public"
+        }
+        ...
+      },
+      ...
+    }
+  }
+}
+
+```
+
+#### List of Private Variables
+
 <TextContent path="/Bedrock-Notebook/txt/molang/hardcoded.txt"/>
+
+
+
+
+## Types
+<!-- 
+- All numerical values are floats.
+- Boolean values such as actor flags are converted and stored as a float value of either 0.0 or 1.0 for values of false or true respectively.
+- For boolean tests, a float value equivalent to 0.0 is false, and anything not equal to 0.0 is true.
+- For array indices, floats are C-style-cast to ints, and clamped at zero for negative values or wrapped by the array size for large values.
+- Other supported types are:
+
+Geometry
+Texture
+Material
+Actor Reference
+Actor Reference Array
+String
+Struct (see 'structs' section below) 
+
+-- link to variables
+-->

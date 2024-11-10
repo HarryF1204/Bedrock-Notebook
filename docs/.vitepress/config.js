@@ -23,7 +23,7 @@ function generateSidebarItems(dir) {
 
         if (stat.isDirectory()) {
             items.push({
-                text: capitalize(file.replace('-', ' ')),
+                text: capitalize(file),
                 items: generateSidebarItems(fullPath),
                 collapsible: true,
                 collapsed: true
@@ -32,7 +32,7 @@ function generateSidebarItems(dir) {
             const name = file.replace('.md', '');
             const relativePath = path.relative(docsPath, fullPath).replace(/\\/g, '/');
             items.push({
-                text: capitalize(name.replace('-', ' ')),
+                text: capitalize(name),
                 link: `/${relativePath.replace('.md', '')}`, // Link to the markdown file
             });
         }

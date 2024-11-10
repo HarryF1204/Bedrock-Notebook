@@ -1,0 +1,36 @@
+pre {
+    background-color: #2d2f34;
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    /* Allow it to take full width of the container */
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    line-height: 1.5;
+    /* Increase readability */
+    margin-bottom: 1em;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: pre-wrap;
+    /* Allow long lines to wrap */
+}
+
+pre code {
+    font-size: 14px;
+    display: block;
+    min-width: 100%;
+    /* Ensures it fills width of the parent container */
+}
+
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #5a5e6a;
+    border-radius: 5px;
+}
+
+pre::-webkit-scrollbar-track {
+    background-color: #3a3d43;
+}
