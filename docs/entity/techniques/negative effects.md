@@ -1,9 +1,6 @@
 # Negative Effects
 ## Overview
 
-> [!note] Note
-> Upon relogging, the negative sign will be ignored, leaving you with an effect of the same level but with a positive amplifier.
-
 Entity components like `minecraft:projectile` or `minecraft:spell_effects` can apply negatively amplified effects on entities. Sometimes, this negative amplification reverses the effect, while other times it remains unchanged, resulting in either a level 1 effect or an effect of the same level but with a positive amplifier.
 
 ```json
@@ -22,6 +19,9 @@ Entity components like `minecraft:projectile` or `minecraft:spell_effects` can a
 ```
 
 ## Effects
+
+> [!note] Note
+> Upon relogging, the negative sign will be ignored, leaving you with an effect of the same level but with a positive amplifier.
 
 | Effect           | Result                                                                 |
 |------------------|------------------------------------------------------------------------|
