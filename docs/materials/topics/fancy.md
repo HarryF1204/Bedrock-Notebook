@@ -1,5 +1,7 @@
 ---
-
+prev:
+    text: 'Stencilling'
+    link: '/materials/topics/stencilling'
 ---
 
 # Fancy

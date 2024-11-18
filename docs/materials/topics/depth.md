@@ -1,5 +1,10 @@
 ---
-
+prev:
+    text: 'Blending'
+    link: '/materials/topics/blending'
+next:
+    text: 'Stencilling'
+    link: '/materials/topics/stencilling'
 ---
 
 # Depth

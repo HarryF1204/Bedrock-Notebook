@@ -1,5 +1,10 @@
 ---
-
+prev:
+  text: 'Defines'
+  link: '/materials/topics/defines'
+next:
+  text: 'Blending'
+  link: '/materials/topics/blending'
 ---
 
 # Sampler States

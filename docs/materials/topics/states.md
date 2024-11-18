@@ -1,5 +1,10 @@
 ---
-
+next:
+    text: 'Defines'
+    link: '/materials/topics/defines'
+prev:
+    text: 'Introduction'
+    link: '/materials/introduction'
 ---
 
 # States

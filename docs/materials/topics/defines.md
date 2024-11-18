@@ -1,5 +1,10 @@
 ---
-
+prev:
+    text: 'States'
+    link: '/materials/topics/states'
+next:
+    text: 'Sampler States'
+    link: '/materials/topics/sampler%20states'
 ---
 
 # Defines

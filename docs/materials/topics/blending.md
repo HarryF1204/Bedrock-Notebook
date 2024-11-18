@@ -1,5 +1,10 @@
 ---
-
+prev:
+    text: 'Sampler States'
+    link: '/materials/topics/sampler%20states'
+next:
+    text: 'Depth'
+    link: '/materials/topics/depth'
 ---
 
 # Blending

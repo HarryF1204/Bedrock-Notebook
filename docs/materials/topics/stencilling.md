@@ -1,5 +1,10 @@
 ---
-
+prev:
+    text: 'Depth'
+    link: '/materials/topics/depth'
+next:
+    text: 'Fancy'
+    link: '/materials/topics/fancy'
 ---
 
 # Stencilling
