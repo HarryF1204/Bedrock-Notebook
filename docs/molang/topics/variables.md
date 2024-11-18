@@ -9,19 +9,122 @@ prev:
 
 # Variables
 
-## Data Types
+## Primary Data Types
 There are 3 main data types that can be directly assigned to variables in Molang:
-- `float` : A floating-point number. Note that all numerical values are floats.
-- `boolean` : A boolean value, stored as a float value of either `0.0` or `1.0` for values of `false` or `true` respectively.
-- `string` : A string value.
 
-However, these are not the only types. Context variables, queries, render controllers, and entity defintion files can all setup different types. These are:
-- `Geometry` : Setup in the client-entity defintion file to reference a model. This is accessed in the render controllers as `geometry.<name>`. 
-- `Texture` : Setup in the client-entity defintion file to reference a texture. This is accessed in the render controllers as `texture.<name>`.
-- `Material` : Setup in the client-entity defintion file to reference a material. This is accessed in the render controllers as `material.<name>`.
-- `Actor Reference` : This can be accessed via queries/context and is used to reference an actor, for example, `c.owning_entity`.
-- `Actor Reference Array` : This cannot be accessed by any stable queries.
-- `Arrays` : Ararys can be setup in the render controller and accessed via `Array.<name>[<index>]`. Note that arrays are clamped at 0 for negative values or wrapped by the array size for large values.
+### Float
+A floating-point number. Note that all numerical values are floats. In certain locations, for example, the `color` property of a render controller, you can wrap a number in a string and append an `f` to the end to make it a percentage. For example:
+```json
+"color": {
+  "r": "1.0f", // keeps original value
+  "g": "1.0f", // keeps original value
+  "b": "1.0f", // keeps original value
+  "a": 0.3
+}
+```
+
+### Boolean
+A boolean value, stored as a float value of either `0.0` or `1.0` for values of `false` or `true` respectively.
+
+### String
+A string value.
+
+## Additional Data Types
+In addition to the primary data types, context variables, queries, render controllers, and entity definition files can define other types.
+
+### Geometry
+Setup in the client-entity definition file to reference a model. This is accessed in the render controllers as `geometry.<name>`.
+
+```json
+// Client-Entity Defintion
+"geometry": {
+  "model_1": "geometry.<namespace>.<model_name>",
+  "model_2": "geometry.<namespace>.<model_name>"
+}
+```
+
+```json
+// Render Controller
+"geometry": "geometry.model_1"
+```
+
+### Texture
+Setup in the client-entity definition file to reference a texture. This is accessed in the render controllers as `texture.<name>`.
+
+```json
+// Client-Entity Defintion
+"textures": {
+  "texture_1": "path/to/texture",
+  "texture_2": "path/to/texture"
+}
+```
+
+```json
+// Render Controller
+"textures": [
+  "texture.texture_1"
+]
+```
+
+### Material
+Setup in the client-entity definition file to reference a material. This is accessed in the render controllers as `material.<name>`.
+
+```json
+// Client-Entity Defintion
+"materials": {
+  "material_1": "<material_name>",
+  "material_2": "<material_name>"
+}
+```
+
+```json
+// Render Controller
+"materials": [
+  {
+    "<bone_name>": "material.material_1"
+  }
+] 
+```
+
+### Arrays
+Arrays can be set up in the render controller and accessed via `Array.<name>[<index>]`. Note that arrays are clamped at 0 for negative values or wrapped by the array size for large values.
+
+```json
+// Render Controller
+"arrays": {
+  "geometries": {
+    "array.<array_name>": [
+      "geometry.<name_1>",
+      "geometry.<name_2>",
+      "geometry.<name_3>"
+    ]
+  },
+  "materials": {
+    "array.<array_name>": [
+      "material.<name_1>",
+      "material.<name_2>",
+      "material.<name_3>"
+    ]
+  },
+  "textures": {
+    "array.<array_name>": [
+      "texture.<name_1>",
+      "texture.<name_2>",
+      "texture.<name_3>"
+    ]
+  }
+},
+"textures": [
+	"array.<array_name>[<molang resulting in a valid index>]"
+]
+```
+
+
+### Actor Reference
+This can be accessed via queries/context and is used to reference an actor, for example, `c.owning_entity`.
+
+### Actor Reference Array
+This cannot be accessed by any stable queries.
 
 ## Variable Types
 Molang allows you to use 3 primary variable types: `variable`, `temp`, and `context`.
