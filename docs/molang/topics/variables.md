@@ -16,30 +16,18 @@ Molang allows you to use 3 variable types: `variable`, `temp`, and `context`.
 `variable.` or `v.` is a read-write variable type accessible within the scope of the current actor (if it is declared in an entity). It shares the same variable space across animations, animation controllers, render controllers, and the client-entity file. Everywhere except entity-attached particles, which have their own variable space and require the `pre_effect_script` component in the animation that create them to pass values.
 
 ### Temp
-`temp.` or `t.` is a temporary read-write variable type accessible within the current scope of an expression. 
-
-Note that the transitions of a state in an animation controller share the same variable scope. This means that a temp variable set in one transition can be accessed by another transition within the same state.
-
-```json
-"transitions": [
-    {
-        "state_1": "t.is_sneaking = q.is_sneaking; return t.is_sneaking;"
-    },
-    {
-        "state_2": "!t.is_sneaking"
-    }
-]
-```
+`temp.` or `t.` is a temporary read-write, lightweight, short-lived variable used for intermediate calculations. Although temp variables are accessible within the global scope of an entity, they should only be referenced within the scope of which they are defined to avoid unexpected results.
 
 ### Context
 `context.` or `c.` is a read-only variable type that is defined by the game. It is used to accerss additonal context surrounding the actor the for example, `c.owning_entity `returns a reference to the entity holding an attachable item.
 
 ## Structs
+Structs are a method of grouping related variables together. They are defined by their usage, for example, `v.vec.x = 0;` defines a struct `vec` with the property `x` holding the value `0`. Although they are convenient, structs use more performance than standards variables so they are not as recommended for every use case. 
 
-Although they are convenient, structs use more performance than standards variables so they are not as recommended. If you want to use them, you can declare them either in initilize or by using the null coalescing operator `??`.
+The recommended way to initilize a struct is with `braces` as shown below with the inline initilization example.
 
 ```json
-"v.vec = v.vec ?? {v.vec.x=0; v.vec.y=0; v.vec.z=0;};""
+"v.vec = v.vec ?? {v.vec.x=0; v.vec.y=0; v.vec.z=0;};"
 ```
 
 
