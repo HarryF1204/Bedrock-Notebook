@@ -9,8 +9,22 @@ prev:
 
 # Variables
 
+## Data Types
+There are 3 main data types that can be directly assigned to variables in Molang:
+- `float` : A floating-point number. Note that all numerical values are floats.
+- `boolean` : A boolean value, stored as a float value of either `0.0` or `1.0` for values of `false` or `true` respectively.
+- `string` : A string value.
+
+However, these are not the only types. Context variables, queries, render controllers, and entity defintion files can all setup different types. These are:
+- `Geometry` : Setup in the client-entity defintion file to reference a model. This is accessed in the render controllers as `geometry.<name>`. 
+- `Texture` : Setup in the client-entity defintion file to reference a texture. This is accessed in the render controllers as `texture.<name>`.
+- `Material` : Setup in the client-entity defintion file to reference a material. This is accessed in the render controllers as `material.<name>`.
+- `Actor Reference` : This can be accessed via queries/context and is used to reference an actor, for example, `c.owning_entity`.
+- `Actor Reference Array` : This cannot be accessed by any stable queries.
+- `Arrays` : Ararys can be setup in the render controller and accessed via `Array.<name>[<index>]`. Note that arrays are clamped at 0 for negative values or wrapped by the array size for large values.
+
 ## Variable Types
-Molang allows you to use 3 variable types: `variable`, `temp`, and `context`.
+Molang allows you to use 3 primary variable types: `variable`, `temp`, and `context`.
 
 ### Variable
 `variable.` or `v.` is a read-write variable type accessible within the scope of the current actor (if it is declared in an entity). It shares the same variable space across animations, animation controllers, render controllers, and the client-entity file. Everywhere except entity-attached particles, which have their own variable space and require the `pre_effect_script` component in the animation that create them to pass values.

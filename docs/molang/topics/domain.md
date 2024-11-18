@@ -8,6 +8,9 @@ prev:
 An incomplete set of examples of where you can use molang to give you an idea of what it can do.
 
 ## Animation Controllers
+> [!Note] Note
+> `transitions` are evaluated before `on_entry` 
+
 Both server-side and client-side animation controllers use molang in their `transitions` as well as `on_entry` and `on_exit` events. 
 
 ```json
