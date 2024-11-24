@@ -199,7 +199,7 @@ In this example, `c.other` refers to the item being used to repair the bow:
 ```
 
 ### Variables
-Hardcoded variables may be used by entities, particles, and items. They are read-only, private, and sometimes only created for entities with specific runtime identifiers. To make a private variable accessible, you can use the `public` keyword in the script component of the client-entity file.
+Hardcoded variables may be used by entities, particles, and items. They are read-only, private, and sometimes only created for entities with specific runtime identifiers. To make a private variable accessible to other actors, you can use the `public` keyword in the script component of the client-entity file.
 ```json
 {
   "format_version": "1.10.0",
@@ -216,8 +216,10 @@ Hardcoded variables may be used by entities, particles, and items. They are read
     }
   }
 }
-
 ```
+
+> [!note] Note
+> Animations **CAN** access private variables. This means that you can use a variable like `v.attack_time` in a client-side animation being ran from the entity and it will work. This also extends to animations ran via `/playanimation` which are added at runtime by adding on an extra animation controller to the entity.
 
 #### List of Private Variables
 
