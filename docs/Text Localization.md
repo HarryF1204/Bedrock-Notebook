@@ -48,6 +48,16 @@ lore.namespace.item_name.line_1=Test Text
 lore.namespace.item_name.line_2=Test Text
 ```
 
+## Newlines in Lang Files
+You can use 
+``~LINEBREAK`` in text files to represent a new line. For example:
+
+```ini
+tile.kirby:testing_new_line.name=This is only using the .lang file ~LINEBREAK~~LINEBREAK~~LINEBREAK~ Not using display name component.
+```
+![Newline example](/images/text_localization/linebreaks.png)
+
+
 ## Input Key Localization
 When displaying a localized message, you may want to give control hints, for example, "Press [key] to open the menu". To this this, you can use `tellraw @s {"rawtext":[{"text":":_input_key.hotbar.1:"}]}`
 
