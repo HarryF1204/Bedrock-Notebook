@@ -50,7 +50,7 @@ lore.namespace.item_name.line_2=Test Text
 
 ## Newlines in Lang Files
 You can use 
-``~LINEBREAK`` in text files to represent a new line. For example:
+``~LINEBREAK~`` in text files to represent a new line. For example:
 
 ```ini
 tile.kirby:testing_new_line.name=This is only using the .lang file ~LINEBREAK~~LINEBREAK~~LINEBREAK~ Not using display name component.
