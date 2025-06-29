@@ -46,7 +46,7 @@ export default defineConfig({
     description: 'A VitePress-powered documentation site',
     base: '/',
     head: [
-        ['link', { rel: 'icon', type: 'image/png', href: '/Bedrock-Notebook/icons/app_icon.png' }]
+        ['link', { rel: 'icon', type: 'image/png', href: '/icons/app_icon.png' }]
     ],
     themeConfig: {
         sidebar: [
