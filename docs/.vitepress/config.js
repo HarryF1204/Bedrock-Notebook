@@ -43,8 +43,8 @@ function generateSidebarItems(dir) {
 
 export default defineConfig({
     title: 'The Bedrock Notebook',
-    description: 'A VitePress-powered documentation site',
-    base: '/',
+    description: 'An Un-Official Minecraft Bedrock addon development documentation site',
+    base: '/Bedrock-Notebook/',
     head: [
         ['link', { rel: 'icon', type: 'image/png', href: '/Bedrock-Notebook/icons/app_icon.png' }]
     ],
