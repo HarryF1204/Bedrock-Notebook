@@ -44,7 +44,7 @@ function generateSidebarItems(dir) {
 export default defineConfig({
     title: 'The Bedrock Notebook',
     description: 'An Un-Official Minecraft Bedrock addon development documentation site',
-    base: '/',
+    base: '/Bedrock-Notebook/',
     head: [
         ['link', { rel: 'icon', type: 'image/png', href: '/icons/app_icon.png' }]
     ],
