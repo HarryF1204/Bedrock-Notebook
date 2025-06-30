@@ -223,7 +223,7 @@ Hardcoded variables may be used by entities, particles, and items. They are read
 
 #### List of Private Variables
 
-<TextContent path="/Bedrock-Notebook/txt/molang/hardcoded.txt"/>
+<TextContent path="/txt/molang/hardcoded.txt"/>
 
 
 
