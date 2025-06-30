@@ -1,11 +1,13 @@
 <template>
-    <div v-if="content" class="file-content">
-        <div class="line-numbers">
-            <span v-for="(line, index) in lines" :key="index">{{ index + 1 }}</span>
+    <div id="container">
+        <div v-if="content" class="file-content">
+            <div class="line-numbers">
+                <span v-for="(line, index) in lines" :key="index">{{ index + 1 }}</span>
+            </div>
+            <pre class="text-content">{{ content }}</pre>
         </div>
-        <pre class="text-content">{{ content }}</pre>
+        <div v-else class="loading">Loading content...</div>
     </div>
-    <div v-else class="loading">Loading content...</div>
 </template>
 
 <script setup>
@@ -36,27 +38,35 @@ onMounted(fetchContent)
 </script>
 
 <style scoped>
-.file-content {
-    display: flex;
+#container {
     max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.file-content {
+    position: relative;
+    display: flex;
     overflow: auto;
     font-size: small;
     border: 1px solid var(--vp-c-divider-light);
     border-radius: 5px;
     background-color: var(--vp-c-bg);
+    background-image:
+        linear-gradient(to right,
+            var(--vp-c-bg-soft) 0,
+            var(--vp-c-bg-soft) 3rem,
+            transparent 3rem);
+    background-repeat: no-repeat;
 }
 
 .line-numbers {
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
+    background: transparent;
+    padding: 0.5rem 0.5rem 0.5rem 0;
     text-align: right;
     user-select: none;
     color: var(--vp-c-text-muted);
-    background-color: var(--vp-c-bg-soft);
-    height: 100%;
-    /* Stretch background to the full height */
     flex-shrink: 0;
-    /* Prevent shrinking */
 }
 
 .line-numbers span {
@@ -65,12 +75,11 @@ onMounted(fetchContent)
 }
 
 .text-content {
+    overflow: visible;
     white-space: pre-wrap;
     padding: 0.5rem;
     line-height: 1.5;
-    color: var(--vp-c-text-base);
-    background-color: var(--vp-c-bg);
-    flex: 1;
     margin: 0;
+    flex: 1;
 }
 </style>
