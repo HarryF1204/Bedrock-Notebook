@@ -1,5 +1,8 @@
 # Alphatest to Opaque Material Colour Fallback
 
+> [!warning]
+> In version `1.21.90`, a temporary feature rollback prevents the `alpha_test_to_opaque` material from switching to opaque rendering at a distance.
+
 ## Problem
 When using the `alpha_test_to_opaque` material, blocks use alpha testing up close but switch to opaque rendering at a distance. This hybrid approach is performance-friendly but has a noticible visual drawback being that any fully transparent pixels are rendered as pure black (`#000`) when the opque fallback is used. This causes visual artifacts that are especially noticible with vibrant textures or models with a lot of transparency.
 
