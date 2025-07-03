@@ -91,7 +91,7 @@ This materials makes use of the emissive property without clearing the alpha cha
 ### Method 1
 ![Outline Method 2](/images/materials/outline_1.png)
 
-Duplicate your model in blockbench and scale it slightly either using the `inflate` property, or by using an animation. Apply this material to the outline.
+Duplicate your model in blockbench and scale it slightly either using the `inflate` property, or by using an animation. [Apply the material below to the outline.](/materials/techniques/Multi-material%20models.html)
 
 ```json
 "outline:entity_alphatest": {
