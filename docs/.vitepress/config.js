@@ -49,6 +49,9 @@ export default defineConfig({
         ['link', { rel: 'icon', type: 'image/png', href: '/icons/app_icon.png' }]
     ],
     themeConfig: {
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/HarryF1204/Bedrock-Notebook' }
+        ],
         sidebar: [
             {
                 text: 'Topics',
